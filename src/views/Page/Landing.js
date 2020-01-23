@@ -99,7 +99,7 @@ class Landing extends Component {
 
         <div className="conatin">
           <div className="row cd" style={{ marginTop: "60px", width: "100%" }}>
-            <div className="col-sm-6" style={{ marginTop: "0px" }}>
+            <div className="col-md-6 col-xl-6" style={{ marginTop: "0px" }}>
               <h1 className="landing_heading">
                 Save up to €1000 annually on a single fleet car
               </h1>
@@ -130,7 +130,7 @@ class Landing extends Component {
                 </div>
               </form>
             </div>
-            <div className="col-sm-6 pull-right">
+            <div className="col-sm-6 col-md-6 col-lg-5 col-xl-6 pull-right">
               <img
                 src={topimage}
                 alt="Top Header"
@@ -143,16 +143,16 @@ class Landing extends Component {
 
         {/* Digital Fleet About Section */}
 
-        <div className="about_fleet" style={{ marginTop: "50px" }}>
+        <div className="about_fleet centered" style={{ marginTop: "50px" }}>
           <h1 className="landing_heading" style={{ fontSize: "45px" }}>
             Yes, you can!
           </h1>
 
           <div
-            className="row about_section"
+            className="row about_section justify-content-md-center"
             style={{ marginTop: "60px", width: "100%" }}
           >
-            <div className="col-sm-3 text-left box_shaoe">
+            <div className="col-sm-3 col-md-4 col-xl-3 text-left box_shaoe">
               <div className="image_background">
                 <img src={key} alt="key" className="image_key" />
               </div>
@@ -164,7 +164,7 @@ class Landing extends Component {
                 you identify where and how savings can be made.
               </p>
             </div>
-            <div className="col-sm-3 text-left box_shaoe">
+            <div className="col-sm-3 col-md-4 col-xl-3 text-left box_shaoe">
               <div className="image_background">
                 <img src={car} alt="key" className="image_key" />
               </div>
@@ -177,7 +177,7 @@ class Landing extends Component {
                 helps you optimise it.
               </p>
             </div>
-            <div className="col-sm-3 text-left box_shaoe">
+            <div className="col-sm-3 col-md-4 col-xl-3 text-left box_shaoe">
               <div className="image_background">
                 <img
                   src={user}
@@ -195,7 +195,7 @@ class Landing extends Component {
               </p>
             </div>
 
-            <div className="col-sm-3 text-left box_shaoe">
+            <div className="col-sm-3 col-md-4 col-xl-3 text-left box_shaoe">
               <div className="image_background">
                 <img
                   src={electric}

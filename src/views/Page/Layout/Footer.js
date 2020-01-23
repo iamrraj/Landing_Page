@@ -13,7 +13,7 @@ class Footer extends Component {
         {/* <Contact /> */}
         <div className="footer_container">
           <div className="col-sm-12" style={{ paddingBottom: "30px" }}>
-            <div className="col-sm-7">
+            <div className="col-sm-7 col-md-12 col-xl-10">
               {/* <p className="font-weight-bold">.</p> */}
               <p
                 className=" footer-don"

@@ -12,6 +12,7 @@ import seventh from "./Image/7.png";
 import car from "./Image/11.png";
 import user from "./Image/Head.png";
 import key from "./Image/Shape.png";
+import electric from "./Image/Electric.png";
 import topimage from "./Image/Group6.png";
 
 import photo1 from "./Image/Photo_1.png";
@@ -197,10 +198,10 @@ class Landing extends Component {
             <div className="col-sm-3 text-left box_shaoe">
               <div className="image_background">
                 <img
-                  src={user}
+                  src={electric}
                   alt="key"
                   className="image_key"
-                  style={{ width: "40px" }}
+                  // style={{ width: "40px" }}
                 />
               </div>
               <p className="font-weight-bold text-dark">

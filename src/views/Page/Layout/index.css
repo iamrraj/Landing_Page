@@ -5,7 +5,10 @@
 }
 
 .bottom_navbar {
-  margin-top: -50px;
+  margin-top: -130px;
+  padding-left: 80px;
+  padding-right: 80px;
+  background-color: white;
 }
 
 .contact_btn {
@@ -30,9 +33,16 @@
   /* padding-left: 100px; */
 }
 
-.land {
-  background-color: white;
+.backbone {
+  background-color: #fef2f2;
+  padding-top: 15px;
+  padding-bottom: 50px;
 }
+.backdody {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
 .slide {
   -webkit-box-shadow: 6px 30px 30px 9px rgb(225, 225, 225, 0.4);
   -moz-box-shadow: 6px 30px 30px 9px rgb(225, 225, 225, 0.4);
@@ -74,6 +84,10 @@
 }
 
 .footer-don {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+}
+.footer-don1 {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
 }
@@ -248,7 +262,7 @@ max-width : 320px;
   padding-right: 200px;
   margin-top: 20px;
   margin-bottom: 30px;
-  background: #f7f8fb;
+  /* background: #f7f8fb; */
   /* height : 200px; */
   padding-top: 40px;
   padding-bottom: 60px;

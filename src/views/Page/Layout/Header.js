@@ -13,7 +13,7 @@ class Header extends Component {
             <img
               src={head}
               alt="MainImag"
-              style={{ height: "45px", marginLeft: "-5px" }}
+              style={{ height: "45px", marginLeft: "15px" }}
             ></img>{" "}
             &nbsp;
           </a>
@@ -52,7 +52,7 @@ class Header extends Component {
                 className="nav-link btn contact_btn font-weight-bold"
                 href="#contactt"
                 rel="modal:open"
-                style={{ color: "rgb(183, 28, 28, 0.8)", marginRight: "-40px" }}
+                style={{ color: "rgb(183, 28, 28, 0.8)", marginRight: "0px" }}
               >
                 Get in touch
               </a>

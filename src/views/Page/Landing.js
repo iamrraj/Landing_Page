@@ -201,7 +201,7 @@ class Landing extends Component {
                   src={electric}
                   alt="key"
                   className="image_key"
-                  // style={{ width: "40px" }}
+                  style={{ transform: "rotate(00deg)" }}
                 />
               </div>
               <p className="font-weight-bold text-dark">

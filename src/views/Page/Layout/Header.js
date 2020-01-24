@@ -13,7 +13,7 @@ class Header extends Component {
             <img
               src={head}
               alt="MainImag"
-              style={{ height: "45px", marginLeft: "15px" }}
+              style={{ height: "45px", marginLeft: "10px" }}
             ></img>{" "}
             &nbsp;
           </a>

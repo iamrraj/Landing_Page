@@ -3,11 +3,11 @@ import React, { Component } from "react";
 // import Swal from "sweetalert2";
 
 class Contact extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state ={
-      email:"",
-    }
+    this.state = {
+      email: ""
+    };
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -17,7 +17,7 @@ class Contact extends Component {
 
   //   const data = {
   //     email: this.state.email,
-     
+
   //   };
 
   //   axios({
@@ -65,35 +65,30 @@ class Contact extends Component {
   render() {
     return (
       <div id="contactt" class="modal">
-        <a
-          href="# "
-          rel="modal:close"
-          className="float-right text-white h4"
-          
-        >
+        <a href="# " rel="modal:close" className="float-right text-white h4">
           &times;
         </a>
         <div>
           <p className="conatct_header text-center">Get in touch with us</p>
         </div>
         <div style={{ marginTop: "40px" }}>
-          <form >
+          <form>
             <div className="col-sm-12">
               <input
                 type="text"
                 style={{ border: "1px solid gray" }}
-                placeholder="Name"
+                placeholder="Name*"
                 name="name"
                 required
                 className="form-control "
                 id="inputt"
               />
             </div>
-            <div className="col-sm-12" >
+            <div className="col-sm-12">
               <input
                 type="text"
                 style={{ border: "1px solid gray" }}
-                placeholder="Company Name"
+                placeholder="Company Name*"
                 required
                 name="cname"
                 className="form-control inputt "
@@ -103,7 +98,7 @@ class Contact extends Component {
             <div className="col-sm-12">
               <input
                 type="email"
-                placeholder="Email address"
+                placeholder="Email address*"
                 name="email"
                 required
                 className="form-control inputt"
@@ -113,7 +108,7 @@ class Contact extends Component {
               <input
                 type="text"
                 style={{ border: "1px solid gray" }}
-                placeholder="Mobile Number"
+                placeholder="Mobile Number*"
                 name="phone"
                 required
                 className="form-control inputt"
@@ -121,7 +116,7 @@ class Contact extends Component {
             </div>
             <div className="col-sm-12">
               <textarea
-                placeholder="Message"
+                placeholder="Message (optional)"
                 name="message"
                 className="form-control inputt"
                 rows={3}
@@ -130,9 +125,7 @@ class Contact extends Component {
 
             <div style={{ marginTop: "30px" }}>
               <center>
-                <button className="btn landing_button">
-                  SEND MESSAGE
-                </button>
+                <button className="btn landing_button">SEND MESSAGE</button>
               </center>
             </div>
           </form>

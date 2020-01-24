@@ -93,15 +93,9 @@ class Footer extends Component {
                   </li> */}
 
                   <li className="nav-item nav-item1  ">
-                    <a className="nav-link text-dark" href="# ">
+                    <p className="nav-link text-dark">
                       Copyright 2020 VivaDrive Polska
-                    </a>
-                  </li>
-
-                  <li className="nav-item nav-item1  ">
-                    <a className="nav-link text-dark" href="# ">
-                      Privacy Policy
-                    </a>
+                    </p>
                   </li>
                 </ul>
 

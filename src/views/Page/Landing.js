@@ -74,9 +74,9 @@ class Landing extends Component {
         });
         this.props.history.push("/");
         Swal.fire({
-          title: "Thank You For Conatact Us",
+          title: "Thank you for contacting us",
           type: "success",
-          text: "We will be in touch with you soon",
+          text: "We will get back to you soon",
           showConfirmButton: false,
           timer: 7000
         });
@@ -98,7 +98,7 @@ class Landing extends Component {
         {/* <Helmet>Landing Page</Helmet> */}
 
         <div className="conatin">
-          <div className="row cd" style={{ marginTop: "60px", width: "100%" }}>
+          <div className="row cd" style={{ marginTop: "120px", width: "100%" }}>
             <div className="col-md-6 col-xl-6" style={{ marginTop: "0px" }}>
               <h1 className="landing_heading">
                 Save up to €1000 annually on a single fleet car
@@ -416,7 +416,7 @@ class Landing extends Component {
                       />{" "}
                     </div>
                     <h1 className="carsole_head" style={{ marginTop: "50px" }}>
-                      Its engaging{" "}
+                      It's engaging{" "}
                     </h1>
                     <p className="carsole_subhead">
                       "We used Digital Fleet by VivaDrive to encourage employees

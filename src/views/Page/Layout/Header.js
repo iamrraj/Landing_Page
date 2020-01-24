@@ -10,7 +10,11 @@ class Header extends Component {
         <Contact />
         <nav className="navbar navbar-expand-lg navbar-dark bg-white fixed">
           <a className="navbar-brand" href="/" style={{ color: "#212226" }}>
-            <img src={head} alt="MainImag" style={{ height: "45px" }}></img>{" "}
+            <img
+              src={head}
+              alt="MainImag"
+              style={{ height: "45px", marginLeft: "-5px" }}
+            ></img>{" "}
             &nbsp;
           </a>
 
@@ -48,7 +52,7 @@ class Header extends Component {
                 className="nav-link btn contact_btn font-weight-bold"
                 href="#contactt"
                 rel="modal:open"
-                style={{ color: "rgb(183, 28, 28, 0.8)" }}
+                style={{ color: "rgb(183, 28, 28, 0.8)", marginRight: "-40px" }}
               >
                 Get in touch
               </a>

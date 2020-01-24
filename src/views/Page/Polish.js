@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { Helmet } from "react-helmet";
-import Header from "./Layout/Header";
-import Footer from "./Layout/Footer";
+import Plheader from "./Layout/Plheader";
+import Plfooter from "./Layout/Plfooter";
 
 import first from "./Image/1.png";
 import second from "./Image/2.png";
@@ -97,18 +97,18 @@ class Landing extends Component {
   render() {
     return (
       <div className="land">
-        <Header />
+        <Plheader />
         {/* <Helmet>Landing Page</Helmet> */}
 
         <div className="conatin">
-          <div className="row cd" style={{ marginTop: "120px", width: "100%" }}>
-            <div className="col-md-6 col-xl-6" style={{ marginTop: "0px" }}>
+          <div className="row cd" style={{ marginTop: "130px", width: "100%" }}>
+            <div className="col-md-6 col-xl-6" style={{ marginTop: "40px" }}>
               <h1 className="landing_heading">
-                Save up to €1000 annually on a single fleet car
+                Zaoszczędź 4000 zł na jednym aucie flotowym
               </h1>
-              <p className="landing_subtitle">
-                Digital Fleet helps you increase your fleet efficiency and will
-                reduce your TCO - fuel, service and insurance costs.
+              <p className="landing_subtitle" style={{ marginTop: "40px" }}>
+                Digital Fleet pomaga zwiększyć wydajność Twojej floty i obniżyć
+                całkowity koszt TCO - koszty paliwa, serwisu i ubezpieczenia.
               </p>
               <form
                 noValidate
@@ -124,11 +124,16 @@ class Landing extends Component {
                       type="text"
                       name="email"
                       onChange={this.change.bind(this)}
-                      placeholder="Your email address"
+                      placeholder=" Twój adres email"
                     />{" "}
                   </div>
                   <div className="col-sm-4">
-                    <button className="btn landing_button">START SAVING</button>
+                    <button
+                      className="btn landing_button"
+                      style={{ width: "200px" }}
+                    >
+                      Zacznij oszczędzać!
+                    </button>
                   </div>
                 </div>
               </form>
@@ -148,7 +153,7 @@ class Landing extends Component {
 
         <div className="about_fleet centered" style={{ marginTop: "50px" }}>
           <h1 className="landing_heading" style={{ fontSize: "45px" }}>
-            Yes, you can!
+            Zacznij teraz!
           </h1>
 
           <div
@@ -160,11 +165,11 @@ class Landing extends Component {
                 <img src={key} alt="key" className="image_key" />
               </div>
               <p className="font-weight-bold text-dark">
-                Reduce fuel and maintenance cost
+                Zmniejszać koszty paliwa i utrzymania floty
               </p>
               <p className="landing_subtitle">
-                Understanding when, where and how your cars are being used helps
-                you identify where and how savings can be made.
+                Dowiedz się kiedy, gdzie i jak używane są Twoje samochody,
+                pomaga określić, gdzie i jak można uzyskać oszczędności.
               </p>
             </div>
             <div className="col-sm-3 col-md-4 col-xl-3 text-left box_shaoe">
@@ -172,12 +177,12 @@ class Landing extends Component {
                 <img src={car} alt="key" className="image_key" />
               </div>
               <p className="font-weight-bold text-dark">
-                Optimise your fleet TCO
+                Obniżać koszt posiadania floty
               </p>
               <p className="landing_subtitle">
-                One fleet tool to rule them all: fuel, service , insurance,
-                depreciation ... Digital Fleet keeps it all in one place and
-                helps you optimise it.
+                Jedno narzędzie do zarządzania kosztem TCO: paliwo, serwis,
+                ubezpieczenie, amortyzacja, ... Digital Fleet pomaga zarządzać i
+                optymalizować koszty TCO
               </p>
             </div>
             <div className="col-sm-3 col-md-4 col-xl-3 text-left box_shaoe">
@@ -190,11 +195,12 @@ class Landing extends Component {
                 />
               </div>
               <p className="font-weight-bold text-dark">
-                Change your driver's behaviour
+                Zmieniać zachowanie kierowców
               </p>
               <p className="landing_subtitle">
-                Analytics, personalised feedback, gamification, and a motivation
-                program to build better drivers and reduce your TCO cost.
+                Analityka, spersonalizowany program naprawczy, grywalizacja - to
+                wszystko tworzy lepszych i bardziej zaangażowanych kierowców i
+                zmniejsza koszt TCO
               </p>
             </div>
 
@@ -208,11 +214,11 @@ class Landing extends Component {
                 />
               </div>
               <p className="font-weight-bold text-dark">
-                Start saving with Electric Vehicles
+                Oszczędzać dzięki pojazdom elektrycznym
               </p>
               <p className="landing_subtitle">
-                We will help you introduce Electric Vehicles In your fleet -
-                save money and the environment.
+                Pomożemy Ci wprowadzić pojazdy elektryczne do Twojej floty i
+                oszczędzić pieniądze i środowisko.
               </p>
             </div>
           </div>
@@ -349,16 +355,17 @@ class Landing extends Component {
                       />{" "}
                     </div>
                     <h1 className="carsole_head" style={{ marginTop: "50px" }}>
-                      It's intelligent{" "}
+                      Inteligenty{" "}
                     </h1>
                     <p className="carsole_subhead">
                       {" "}
-                      "We are jointly working with Digital Fleet to apply Big
-                      Data and AI to build products for electromobility."{" "}
+                      "Współpracujemy z Digital Fleet, wykorzystując technologie
+                      Big Data i sztucznej inteligencji, w celu stworzenia
+                      inteligentnych produktów dla sektora elektromobilności."{" "}
                     </p>
                     <div className="footer1" style={{ marginLeft: "20px" }}>
                       <p className="name_carsole">Arkadiusz Seredyn</p>
-                      <p className="title_carsole">VP Synerise</p>
+                      <p className="title_carsole">Wiceprezes Synerise</p>
                     </div>
                   </div>
                 </div>
@@ -384,12 +391,12 @@ class Landing extends Component {
                       />{" "}
                     </div>
                     <h1 className="carsole_head" style={{ marginTop: "50px" }}>
-                      It's efficient{" "}
+                      Efektywny{" "}
                     </h1>
                     <p className="carsole_subhead">
-                      "We used VivaDrive's Digital Fleet to create a fun program
-                      for young drivers. It's doing a good job promoting driving
-                      efficiency and it prevents road accidents."{" "}
+                      "Wykorzystaliśmy system VivaDrive, aby stworzyć program
+                      dla młodych kierowców promujący efektywną jazdę i
+                      zapobiegający wypadkom drogowym."{" "}
                     </p>
                     <div className="footer1" style={{ marginLeft: "20px" }}>
                       <p className="name_carsole">Karin Genoe</p>
@@ -419,17 +426,17 @@ class Landing extends Component {
                       />{" "}
                     </div>
                     <h1 className="carsole_head" style={{ marginTop: "50px" }}>
-                      It's engaging{" "}
+                      Angażujący{" "}
                     </h1>
                     <p className="carsole_subhead">
-                      "We used Digital Fleet by VivaDrive to encourage employees
-                      to create a traffic safety culture within our organization
-                      and to improve internal fleet KPIs."{" "}
+                      "Wykorzystaliśmy system VivaDrive, aby stworzyć kulturę
+                      bezpiecznej jazdy w naszej organizacji i aby poprawić
+                      kluczowe wskaźniki kosztowe naszej floty."
                     </p>
                     <div className="footer1" style={{ marginLeft: "20px" }}>
                       <p className="name_carsole">Ben Weyts</p>
                       <p className="title_carsole">
-                        Flemish Minister of Mobility
+                        Minister mobilności, Belgia
                       </p>
                     </div>
                   </div>
@@ -456,16 +463,17 @@ class Landing extends Component {
                       />{" "}
                     </div>
                     <h1 className="carsole_head" style={{ marginTop: "50px" }}>
-                      It's sustainable
+                      Zrównoważony
                     </h1>
                     <p className="carsole_subhead">
-                      "VivaDrive is a technology partner of Power4Change 2020
-                      Expedition - first-ever trip around the world with an NOA
-                      humanoid robot, realised in an Electric Vehicle."{" "}
+                      "VivaDrive jest partnerem technologicznym wyprawy
+                      Power4Change 2020 - pierwszej w historii podróży dookoła
+                      świata z robotem humanoidalnym NOA, realizowanej
+                      samochodem elektrycznym."{" "}
                     </p>
                     <div className="footer1" style={{ marginLeft: "20px" }}>
                       <p className="name_carsole">Marek Kamiński</p>
-                      <p className="title_carsole">Famous Polish explorer</p>
+                      <p className="title_carsole">Słynny polski podróżnik</p>
                     </div>
                   </div>
                 </div>
@@ -526,7 +534,7 @@ class Landing extends Component {
         </div>
 
         <div>
-          <Footer />
+          <Plfooter />
         </div>
       </div>
     );

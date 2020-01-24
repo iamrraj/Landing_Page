@@ -12,10 +12,7 @@ class Footer extends Component {
       <div className="" style={{ marginTop: "40px" }}>
         {/* <Contact /> */}
         <div className="">
-          <div
-            className="col-sm-12 backbone"
-            style={{ paddingBottom: "", width: "100%" }}
-          >
+          <div className="col-sm-12 backbone" style={{ width: "100%" }}>
             <div className="col-sm-7 col-md-12 col-xl-10 backdody ">
               {/* <p className="font-weight-bold">.</p> */}
               <p

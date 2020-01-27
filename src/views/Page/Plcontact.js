@@ -36,7 +36,7 @@ class Plcontact extends Component {
           phone: "",
           message: ""
         });
-        this.props.history.push("/digitalfleet/pl");
+        // this.props.history.push("/digitalfleet/pl");
         Swal.fire({
           title: "Thank you for contacting us",
           type: "success",

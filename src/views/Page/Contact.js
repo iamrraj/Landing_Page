@@ -35,7 +35,7 @@ class Contact extends Component {
           phone: "",
           message: ""
         });
-        this.props.history.push("/digitalfleet/");
+        // this.props.history.push("/digitalfleet/");
         Swal.fire({
           title: "Thank you for contacting us",
           type: "success",

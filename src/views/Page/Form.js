@@ -26,7 +26,7 @@ class Form extends Component {
         this.setState({
           email: ""
         });
-        this.props.history.push("/digitalfleet/");
+        // this.props.history.push("/digitalfleet/");
         Swal.fire({
           title: "Thank you for contacting us",
           type: "success",

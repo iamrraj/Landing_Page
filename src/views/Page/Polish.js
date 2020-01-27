@@ -61,7 +61,7 @@ class Landing extends Component {
           type: "success",
           text: "We will get back to you soon",
           showConfirmButton: false,
-          timer: 7000
+          timer: 2000
         });
       })
       .catch(err => {
@@ -83,6 +83,9 @@ class Landing extends Component {
   }
 
   render() {
+    const { email } = this.state;
+    const mailformat = RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g);
+    const isEnabled = email.match(mailformat);
     return (
       <div className="land">
         <Plheader />
@@ -121,6 +124,7 @@ class Landing extends Component {
                       type="submit"
                       onClick={e => this.handleFormSubmit(e)}
                       value=" Zacznij oszczędzać!"
+                      disabled={!isEnabled}
                       className="btn landing_button pl_button"
                     />
                   </div>

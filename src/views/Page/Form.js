@@ -32,7 +32,7 @@ class Form extends Component {
           type: "success",
           text: "We will get back to you soon",
           showConfirmButton: false,
-          timer: 7000
+          timer: 2000
         });
       })
       .catch(err => {
@@ -54,6 +54,9 @@ class Form extends Component {
   }
 
   render() {
+    const { email } = this.state;
+    const mailformat = RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g);
+    const isEnabled = email.match(mailformat);
     return (
       <form
         noValidate
@@ -78,6 +81,7 @@ class Form extends Component {
               type="submit"
               onClick={e => this.handleFormSubmit(e)}
               value=" START SAVING"
+              disabled={!isEnabled}
               className="btn landing_button"
             />
           </div>

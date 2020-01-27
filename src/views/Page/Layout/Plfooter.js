@@ -39,7 +39,7 @@ class Plfooter extends Component {
           type: "success",
           text: "We will get back to you soon",
           showConfirmButton: false,
-          timer: 7000
+          timer: 2000
         });
       })
       .catch(err => {
@@ -61,6 +61,9 @@ class Plfooter extends Component {
   }
 
   render() {
+    const { email } = this.state;
+    const mailformat = RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g);
+    const isEnabled = email.match(mailformat);
     return (
       <div className="" style={{ marginTop: "40px" }}>
         {/* <Contact /> */}
@@ -123,6 +126,7 @@ class Plfooter extends Component {
                       <input
                         type="submit"
                         onClick={e => this.handleFormSubmit(e)}
+                        disabled={!isEnabled}
                         value=" Zacznij oszczędzać!"
                         className="btn landing_button pl_button"
                       />

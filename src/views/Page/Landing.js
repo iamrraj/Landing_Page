@@ -36,43 +36,73 @@ class Landing extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: ""
+      email: "",
+      formErrors: { email: "" },
+      emailValid: false
       // mailSent: false
     };
   }
 
+  validateField(fieldName, value) {
+    let fieldValidationErrors = this.state.formErrors;
+    let emailValid = this.state.emailValid;
+
+    switch (fieldName) {
+      case "email":
+        emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+        fieldValidationErrors.email = emailValid ? "" : " is invalid";
+        break;
+
+      default:
+        break;
+    }
+    this.setState(
+      { formErrors: fieldValidationErrors, emailValid: emailValid },
+      this.validateForm
+    );
+  }
+
+  validateForm() {
+    this.setState({
+      formValid: this.state.emailValid
+    });
+  }
+
   handleFormSubmit = e => {
     e.preventDefault();
-    axios({
-      method: "post",
-      url: `${API_PATH}`,
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      data: qs.stringify(this.state)
-    })
-      .then(result => {
-        this.setState({
-          email: ""
-        });
-        // this.props.history.push("/digitalfleet/");
-        Swal.fire({
-          title: "Thank you for contacting us",
-          type: "success",
-          text: "We will get back to you soon",
-          showConfirmButton: false,
-          timer: 7000
-        });
+
+    if (this.validateField) {
+      axios({
+        method: "post",
+        url: `${API_PATH}`,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        data: qs.stringify(this.state)
       })
-      .catch(err => {
-        console.log(err);
-        Swal.fire({
-          title: "Error",
-          type: "error",
-          text: "Error while Sending Email!",
-          timer: 2000
+        .then(result => {
+          this.setState({
+            email: " "
+          });
+          // this.props.history.push("/digitalfleet/");
+          Swal.fire({
+            title: "Thank you for contacting us",
+            type: "success",
+            text: "We will get back to you soon",
+            showConfirmButton: false,
+            timer: 2000
+          });
+        })
+        .catch(err => {
+          console.log(err);
+          Swal.fire({
+            title: "Error",
+            type: "error",
+            text: "Error while Sending Email!",
+            timer: 2000
+          });
         });
-      });
+    }
   };
 
   async change(event) {
@@ -83,6 +113,9 @@ class Landing extends Component {
   }
 
   render() {
+    const { email } = this.state;
+    const mailformat = RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g);
+    const isEnabled = email.match(mailformat);
     return (
       <div className="land">
         <Header />
@@ -110,19 +143,24 @@ class Landing extends Component {
                     <input
                       className="form-control"
                       style={{ border: "1px solid gray", height: "38px" }}
-                      type="text"
+                      type="email"
+                      autoComplete="off"
                       name="email"
+                      required={!isEnabled}
+                      value={this.state.email}
                       onChange={this.change.bind(this)}
                       placeholder="Your email address"
                     />{" "}
                   </div>
                   <div className="col-sm-4">
-                    <input
+                    <button
                       type="submit"
-                      onClick={e => this.handleFormSubmit(e)}
-                      value=" START SAVING"
                       className="btn landing_button"
-                    />
+                      disabled={!isEnabled}
+                      onClick={e => this.handleFormSubmit(e)}
+                    >
+                      START SAVING
+                    </button>
                   </div>
                 </div>
 

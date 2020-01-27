@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import qs from "qs";
+import "./Layout/hide";
 
 const API_PATH = "https://tools.dev.myddp.eu/vivadrive.io/contacts.php";
 
@@ -35,14 +36,15 @@ class Contact extends Component {
           phone: "",
           message: ""
         });
-        // this.props.history.push("/digitalfleet/");
+        //this.props.history.push("/digitalfleet/");
         Swal.fire({
           title: "Thank you for contacting us",
           type: "success",
           text: "We will get back to you soon",
           showConfirmButton: false,
-          timer: 7000
+          timer: 2000
         });
+        this.props.onRequestHide();
       })
       .catch(err => {
         console.log(err);
@@ -51,7 +53,7 @@ class Contact extends Component {
           type: "success",
           text: "We will get back to you soon",
           showConfirmButton: false,
-          timer: 7000
+          timer: 2000
         });
       });
   };
@@ -64,6 +66,9 @@ class Contact extends Component {
   }
 
   render() {
+    const { email, phone } = this.state;
+    const mailformat = RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g);
+    const isEnabled = email.match(mailformat) && phone.length > 8;
     return (
       <div id="contactt" class="modal">
         <a href="# " rel="modal:close" className="float-right text-white h4">
@@ -73,7 +78,11 @@ class Contact extends Component {
           <p className="conatct_header text-center">Get in touch with us</p>
         </div>
         <div style={{ marginTop: "40px" }}>
-          <form noValidate autoComplete="off">
+          <form
+            noValidate
+            autoComplete="off"
+            onSubmit={e => this.handleFormSubmit(e)}
+          >
             <div className="col-sm-12">
               <input
                 type="text"
@@ -133,8 +142,8 @@ class Contact extends Component {
               <center>
                 <input
                   type="submit"
-                  onClick={e => this.handleFormSubmit(e)}
                   value="SEND MESSAGE"
+                  disabled={!isEnabled}
                   className="btn landing_button"
                 />
               </center>

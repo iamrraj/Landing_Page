@@ -391,6 +391,10 @@ max-width : 320px;
   margin-right: 10px;
 }
 
+.pl_button {
+  width:200px;
+}
+
 .pricing_list {
   margin-top: 8px;
   opacity: 0.7;
@@ -496,7 +500,7 @@ max-width : 320px;
     padding-right: 0px;
   }
   #top_image {
-    width: 300px;
+    width: 270px;
     margin-left: -40px;
   }
   .ev {
@@ -648,10 +652,37 @@ max-width : 320px;
     margin-top: -200px;
   }
   #top_image {
-    width: 335px;
+    width: 310px;
+    padding-left: 20px;
+  }
+  .carsole_head {
+    padding-top: 30px;
+  }
+  .name_carsole {
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  .title_carsole {
+    padding-left: 10px;
+  }
+  .cardd {
+    padding-left: 30px;
+    padding-right: 30px;
   }
   .box_2 {
     max-width: 300px;
+  }
+
+  .backdody {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .bottom_navbar {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .pl_button {
+    width: 100%;
   }
   .conatin {
     padding-right: 40px;

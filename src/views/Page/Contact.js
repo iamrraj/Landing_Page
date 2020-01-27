@@ -72,7 +72,10 @@ class Contact extends Component {
           <p className="conatct_header text-center">Get in touch with us</p>
         </div>
         <div style={{ marginTop: "40px" }}>
-          <form>
+          <form
+            method="POST"
+            action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php?noredirect=1"
+          >
             <div className="col-sm-12">
               <input
                 type="text"

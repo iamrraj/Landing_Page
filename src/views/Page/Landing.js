@@ -113,7 +113,9 @@ class Landing extends Component {
               <form
                 noValidate
                 autoComplete="off"
-                onSubmit={this.handleSubmit}
+                // onSubmit={this.handleSubmit}
+                method="POST"
+                action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php?noredirect=1"
                 style={{ marginTop: "40px" }}
               >
                 <div className="row">
@@ -338,7 +340,7 @@ class Landing extends Component {
                       style={{ height: "480px" }}
                     />
                   </div>
-                  <div className="col-md-6 col-sm-6 right">
+                  <div className="col-md-6 col-sm-6 cardd right">
                     <div style={{ marginTop: "50px" }}>
                       {" "}
                       <img
@@ -373,7 +375,7 @@ class Landing extends Component {
                       style={{ height: "480px" }}
                     />
                   </div>
-                  <div className="col-md-6 col-sm-6">
+                  <div className="col-md-6 col-sm-6 cardd">
                     <div style={{ marginTop: "50px" }}>
                       {" "}
                       <img
@@ -408,7 +410,7 @@ class Landing extends Component {
                       style={{ height: "480px" }}
                     />
                   </div>
-                  <div className="col-md-6 col-sm-6">
+                  <div className="col-md-6 col-sm-6 cardd">
                     <div style={{ marginTop: "50px" }}>
                       {" "}
                       <img
@@ -445,7 +447,7 @@ class Landing extends Component {
                       style={{ height: "480px" }}
                     />
                   </div>
-                  <div className="col-md-6 col-sm-6">
+                  <div className="col-md-6 col-sm-6 cardd">
                     <div style={{ marginTop: "50px" }}>
                       {" "}
                       <img

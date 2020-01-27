@@ -1,18 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
 class Form extends Component {
-     constructor(props){
+  constructor(props) {
     super(props);
-    this.state ={
-      email:"",
-    }
+    this.state = {
+      email: ""
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-
-async change(event) {
+  async change(event) {
     await this.setState({
       [event.target.name]: event.target.value
     });
@@ -24,8 +23,7 @@ async change(event) {
     // let authToken = localStorage.getItem("Token");
 
     const data = {
-      email: this.state.email,
-     
+      email: this.state.email
     };
 
     axios({
@@ -47,7 +45,7 @@ async change(event) {
     })
       .then(res => {
         this.setState({
-          email:""
+          email: ""
         });
         this.props.history.push("/landing");
         Swal.fire({
@@ -66,36 +64,35 @@ async change(event) {
           text: "Error while Sending Email!",
           timer: 2000
         });
-       
       });
   }
 
-    render() {
-        return (
-            <form  noValidate
-            autoComplete="off"
-            onSubmit={this.props.load}>
-              <div className="row">
-                <div className="col-sm-6">
-                  <input
-                    className="form-control"
-                    style={{ border: "1px solid gray", height: "38px" }}
-                    type="text"
-                    name="email"
-                    value={this.state.email}
-                    onChange = {this.change.bind(this)}
-                    placeholder="Your email address"
-                  />{" "}
-                </div>
-                <div className="col-sm-4">
-                  <button className="btn landing_button">
-                    START SAVING
-                  </button>
-                </div>
-              </div>
-              </form>
-        )
-    }
+  render() {
+    return (
+      <form
+        noValidate
+        autoComplete="off"
+        method="POST"
+        action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php?noredirect=1"
+      >
+        <div className="row">
+          <div className="col-sm-6">
+            <input
+              className="form-control"
+              style={{ border: "1px solid gray", height: "38px" }}
+              type="text"
+              name="email"
+              onChange={this.change.bind(this)}
+              placeholder="Your email address"
+            />{" "}
+          </div>
+          <div className="col-sm-4">
+            <button className="btn landing_button">START SAVING</button>
+          </div>
+        </div>
+      </form>
+    );
+  }
 }
 
 export default Form;

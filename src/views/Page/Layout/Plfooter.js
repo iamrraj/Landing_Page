@@ -30,7 +30,7 @@ class Plfooter extends Component {
                 Zacznij oszczędzać
               </h1>
               <p
-                className="  footer-don1"
+                className="footer-don1 "
                 style={{ marginTop: "20px", fontSize: "15px" }}
               >
                 {/* {" "}
@@ -53,25 +53,27 @@ class Plfooter extends Component {
               </p>
 
               <div style={{ marginTop: "50px" }}>
-                <div className="row">
-                  <div className="col-sm-6">
-                    <input
-                      className="form-control"
-                      style={{ border: "1px solid gray", height: "38px" }}
-                      type="text"
-                      name="email"
-                      placeholder=" Twój adres email"
-                    />{" "}
+                <form
+                  method="POST"
+                  action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php?noredirect=1"
+                >
+                  <div className="row">
+                    <div className="col-sm-6">
+                      <input
+                        className="form-control"
+                        style={{ border: "1px solid gray", height: "38px" }}
+                        type="text"
+                        name="email"
+                        placeholder=" Twój adres email"
+                      />{" "}
+                    </div>
+                    <div className="col-sm-4">
+                      <button className="btn landing_button pl_button">
+                        Zacznij oszczędzać!
+                      </button>
+                    </div>
                   </div>
-                  <div className="col-sm-4">
-                    <button
-                      className="btn landing_button"
-                      style={{ width: "200px" }}
-                    >
-                      Zacznij oszczędzać!
-                    </button>
-                  </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>

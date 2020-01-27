@@ -113,7 +113,8 @@ class Landing extends Component {
               <form
                 noValidate
                 autoComplete="off"
-                onSubmit={this.handleSubmit}
+                method="POST"
+                action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php?noredirect=1"
                 style={{ marginTop: "40px" }}
               >
                 <div className="row">
@@ -129,8 +130,8 @@ class Landing extends Component {
                   </div>
                   <div className="col-sm-4">
                     <button
-                      className="btn landing_button"
-                      style={{ width: "200px" }}
+                      className="btn landing_button pl_button"
+                     
                     >
                       Zacznij oszczędzać!
                     </button>
@@ -344,7 +345,7 @@ class Landing extends Component {
                       style={{ height: "480px" }}
                     />
                   </div>
-                  <div className="col-md-6 col-sm-6 right">
+                  <div className="col-md-6 col-sm-6 cardd right">
                     <div style={{ marginTop: "50px" }}>
                       {" "}
                       <img
@@ -372,7 +373,7 @@ class Landing extends Component {
               </div>
               <div class="carousel-item">
                 <div className="row">
-                  <div className="col-md-5 col-sm-6">
+                  <div className="col-md-5 col-sm-6 ">
                     <img
                       class="d-block "
                       src={photo2}
@@ -380,7 +381,7 @@ class Landing extends Component {
                       style={{ height: "480px" }}
                     />
                   </div>
-                  <div className="col-md-6 col-sm-6">
+                  <div className="col-md-6 col-sm-6 cardd">
                     <div style={{ marginTop: "50px" }}>
                       {" "}
                       <img
@@ -415,7 +416,7 @@ class Landing extends Component {
                       style={{ height: "480px" }}
                     />
                   </div>
-                  <div className="col-md-6 col-sm-6">
+                  <div className="col-md-6 col-sm-6 cardd">
                     <div style={{ marginTop: "50px" }}>
                       {" "}
                       <img
@@ -452,7 +453,7 @@ class Landing extends Component {
                       style={{ height: "480px" }}
                     />
                   </div>
-                  <div className="col-md-6 col-sm-6">
+                  <div className="col-md-6 col-sm-6 cardd">
                     <div style={{ marginTop: "50px" }}>
                       {" "}
                       <img

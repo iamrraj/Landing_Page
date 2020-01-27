@@ -11,7 +11,7 @@ class Plheader extends Component {
         <nav className="navbar navbar-expand-lg navbar-dark bg-white fixed">
           <a
             className="navbar-brand"
-            href="/digitalfleet/"
+            href={`${process.env.PUBLIC_URL}/digitalfleet/pl/`}
             style={{ color: "#212226" }}
           >
             <img

@@ -9,12 +9,14 @@ import Polish from "./views/Page/Polish";
 
 class App extends Component {
   render() {
+    const baseUrl = process.env.PUBLIC_URL;
     return (
       <BrowserRouter>
         {/* <Header /> */}
         <Switch>
-          <Route path="/" exact component={Landing} />
-          <Route path="/pl" exact component={Polish} />
+          <Route path={baseUrl + "/digitalfleet/"} exact component={Landing} />
+          {/* <Route path="/" exact component={Landing} /> */}
+          <Route path={baseUrl + "/digitalfleet/pl/"} component={Polish} />
         </Switch>
         {/* <Footer /> */}
       </BrowserRouter>

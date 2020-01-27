@@ -134,6 +134,7 @@ class Landing extends Component {
               <form
                 noValidate
                 autoComplete="off"
+                onSubmit={e => this.handleFormSubmit(e)}
                 // method="POST"
                 // action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php"
                 style={{ marginTop: "40px" }}
@@ -157,7 +158,6 @@ class Landing extends Component {
                       type="submit"
                       className="btn landing_button"
                       disabled={!isEnabled}
-                      onClick={e => this.handleFormSubmit(e)}
                     >
                       START SAVING
                     </button>

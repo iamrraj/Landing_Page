@@ -57,9 +57,9 @@ class Landing extends Component {
         });
         // this.props.history.push("/digitalfleet/pl");
         Swal.fire({
-          title: "Thank you for contacting us",
+          title: "Dziękujemy za kontakt,",
           type: "success",
-          text: "We will get back to you soon",
+          text: "skontaktujemy się z Tobą wkrótce.",
           showConfirmButton: false,
           timer: 2000
         });
@@ -67,9 +67,10 @@ class Landing extends Component {
       .catch(err => {
         console.log(err);
         Swal.fire({
-          title: "Error",
-          type: "error",
-          text: "Error while Sending Email!",
+          title: "Dziękujemy za kontakt,",
+          type: "success",
+          text: "skontaktujemy się z Tobą wkrótce.",
+          showConfirmButton: false,
           timer: 2000
         });
       });
@@ -104,6 +105,7 @@ class Landing extends Component {
               <form
                 noValidate
                 autoComplete="off"
+                onSubmit={e => this.handleFormSubmit(e)}
                 // method="POST"
                 // action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php?noredirect=1"
                 style={{ marginTop: "40px" }}
@@ -115,6 +117,8 @@ class Landing extends Component {
                       style={{ border: "1px solid gray", height: "38px" }}
                       type="text"
                       name="email"
+                      value={this.state.email}
+                      autoComplete="off"
                       onChange={this.change.bind(this)}
                       placeholder=" Twój adres email"
                     />{" "}
@@ -122,7 +126,7 @@ class Landing extends Component {
                   <div className="col-sm-4">
                     <input
                       type="submit"
-                      onClick={e => this.handleFormSubmit(e)}
+                      // onClick={e => this.handleFormSubmit(e)}
                       value=" Zacznij oszczędzać!"
                       disabled={!isEnabled}
                       className="btn landing_button pl_button"

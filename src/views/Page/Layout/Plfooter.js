@@ -35,9 +35,9 @@ class Plfooter extends Component {
         });
         // this.props.history.push("/digitalfleet/pl");
         Swal.fire({
-          title: "Thank you for contacting us",
+          title: "Dziękujemy za kontakt,",
           type: "success",
-          text: "We will get back to you soon",
+          text: "skontaktujemy się z Tobą wkrótce.",
           showConfirmButton: false,
           timer: 2000
         });
@@ -45,9 +45,10 @@ class Plfooter extends Component {
       .catch(err => {
         console.log(err);
         Swal.fire({
-          title: "Error",
-          type: "error",
-          text: "Error while Sending Email!",
+          title: "Dziękujemy za kontakt,",
+          type: "success",
+          text: "skontaktujemy się z Tobą wkrótce.",
+          showConfirmButton: false,
           timer: 2000
         });
       });
@@ -110,7 +111,11 @@ class Plfooter extends Component {
               </p>
 
               <div style={{ marginTop: "50px" }}>
-                <form noValidate autoComplete="off">
+                <form
+                  noValidate
+                  autoComplete="off"
+                  onSubmit={e => this.handleFormSubmit(e)}
+                >
                   <div className="row">
                     <div className="col-sm-6">
                       <input
@@ -118,6 +123,8 @@ class Plfooter extends Component {
                         style={{ border: "1px solid gray", height: "38px" }}
                         type="text"
                         name="email"
+                        value={this.state.email}
+                        autoComplete="off"
                         onChange={this.change.bind(this)}
                         placeholder=" Twój adres email"
                       />{" "}
@@ -125,7 +132,7 @@ class Plfooter extends Component {
                     <div className="col-sm-4">
                       <input
                         type="submit"
-                        onClick={e => this.handleFormSubmit(e)}
+                        // onClick={e => this.handleFormSubmit(e)}
                         disabled={!isEnabled}
                         value=" Zacznij oszczędzać!"
                         className="btn landing_button pl_button"

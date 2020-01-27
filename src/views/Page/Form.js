@@ -61,6 +61,7 @@ class Form extends Component {
       <form
         noValidate
         autoComplete="off"
+        onSubmit={e => this.handleFormSubmit(e)}
         // method="POST"
         // onSubmit={this.handleSubmit1.bind(this)}
         // action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php?noredirect=1"
@@ -72,6 +73,8 @@ class Form extends Component {
               style={{ border: "1px solid gray", height: "38px" }}
               type="text"
               name="email"
+              value={this.state.email}
+              autoComplete="off"
               onChange={this.change.bind(this)}
               placeholder="Your email address"
             />{" "}
@@ -79,7 +82,7 @@ class Form extends Component {
           <div className="col-sm-4">
             <input
               type="submit"
-              onClick={e => this.handleFormSubmit(e)}
+              // onClick={e => this.handleFormSubmit(e)}
               value=" START SAVING"
               disabled={!isEnabled}
               className="btn landing_button"

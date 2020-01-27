@@ -9,7 +9,11 @@ class Header extends Component {
       <div className="roww">
         <Contact />
         <nav className="navbar navbar-expand-lg navbar-dark bg-white fixed">
-          <a className="navbar-brand" href="/" style={{ color: "#212226" }}>
+          <a
+            className="navbar-brand"
+            href="/digitalfleet/"
+            style={{ color: "#212226" }}
+          >
             <img
               src={head}
               alt="MainImag"

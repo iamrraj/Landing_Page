@@ -1,66 +1,68 @@
 import React, { Component } from "react";
-// import axios from "axios";
-// import Swal from "sweetalert2";
+import axios from "axios";
+import Swal from "sweetalert2";
+import qs from "qs";
+
+const API_PATH = "https://tools.dev.myddp.eu/vivadrive.io/contacts.php";
 
 class Plcontact extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: ""
+      name: "",
+      cname: "",
+      email: "",
+      phone: "",
+      message: ""
+      // mailSent: false
     };
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   // let authToken = localStorage.getItem("Token");
+  handleFormSubmit = e => {
+    e.preventDefault();
+    axios({
+      method: "post",
+      url: `${API_PATH}`,
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: qs.stringify(this.state)
+    })
+      .then(result => {
+        this.setState({
+          name: "",
+          cname: "",
+          email: "",
+          phone: "",
+          message: ""
+        });
+        this.props.history.push("/pl");
+        Swal.fire({
+          title: "Thank you for contacting us",
+          type: "success",
+          text: "We will get back to you soon",
+          showConfirmButton: false,
+          timer: 7000
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        Swal.fire({
+          title: "Thank you for contacting us",
+          type: "success",
+          text: "We will get back to you soon",
+          showConfirmButton: false,
+          timer: 7000
+        });
+      });
+  };
 
-  //   const data = {
-  //     email: this.state.email,
-
-  //   };
-
-  //   axios({
-  //     // Define Method
-  //     method: "post",
-
-  //     // Set Access Token URL
-  //     url: `https://simpleisbestt.herokuapp.com/api/newsletter/`,
-  //     //Set Headers
-  //     headers: {
-  //       Accept: "application/json",
-  //       "Content-Type": "application/json"
-  //       // "Content-Type": "application/x-www-form-urlencoded"
-  //       // Authorization: "Bearer " + JSON.parse(authToken)
-  //     },
-
-  //     // Interpolate variables in the strings using Template Literals
-  //     data
-  //   })
-  //     .then(res => {
-  //       this.setState({
-  //         email:""
-  //       });
-  //       this.props.history.push("/landing");
-  //       Swal.fire({
-  //         title: "Thank You For Conatact Us",
-  //         type: "success",
-  //         text: "We will be in touch with you soon",
-  //         showConfirmButton: false,
-  //         timer: 7000
-  //       });
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //       Swal.fire({
-  //         title: "Error",
-  //         type: "error",
-  //         text: "Error while Sending Email!",
-  //         timer: 2000
-  //       });
-  //       //NotificationManager.error("Error while Creating new book!", "Error!");
-  //     });
-  // }
+  async change(event) {
+    await this.setState({
+      [event.target.name]: event.target.value
+    });
+    console.log(this.state);
+  }
 
   render() {
     return (
@@ -72,10 +74,7 @@ class Plcontact extends Component {
           <p className="conatct_header text-center">Skontaktuj się z nami!</p>
         </div>
         <div style={{ marginTop: "40px" }}>
-          <form
-            method="POST"
-            action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php?noredirect=1"
-          >
+          <form noValidate autoComplete="off">
             <div className="col-sm-12">
               <input
                 type="text"
@@ -83,6 +82,7 @@ class Plcontact extends Component {
                 placeholder="Twoje imię*"
                 name="name"
                 required
+                onChange={this.change.bind(this)}
                 className="form-control "
                 id="inputt"
               />
@@ -94,6 +94,7 @@ class Plcontact extends Component {
                 placeholder="Nazwa firmy*"
                 required
                 name="cname"
+                onChange={this.change.bind(this)}
                 className="form-control inputt "
                 id="inputt"
               />
@@ -104,6 +105,7 @@ class Plcontact extends Component {
                 placeholder="Adres email*"
                 name="email"
                 required
+                onChange={this.change.bind(this)}
                 className="form-control inputt"
               />
             </div>
@@ -113,6 +115,7 @@ class Plcontact extends Component {
                 style={{ border: "1px solid gray" }}
                 placeholder="Numer komórkowy*"
                 name="phone"
+                onChange={this.change.bind(this)}
                 required
                 className="form-control inputt"
               />
@@ -122,13 +125,19 @@ class Plcontact extends Component {
                 placeholder="Wiadomość (opcjonalne)"
                 name="message"
                 className="form-control inputt"
+                onChange={this.change.bind(this)}
                 rows={3}
               ></textarea>
             </div>
 
             <div style={{ marginTop: "30px" }}>
               <center>
-                <button className="btn landing_button">WYŚLIJ</button>
+                <input
+                  type="submit"
+                  onClick={e => this.handleFormSubmit(e)}
+                  value="WYŚLIJ"
+                  className="btn landing_button"
+                />
               </center>
             </div>
           </form>

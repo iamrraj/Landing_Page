@@ -28,6 +28,9 @@ import photo13 from "./Image/Photo_13.png";
 import photo14 from "./Image/Photo_14.png";
 import axios from "axios";
 import Swal from "sweetalert2";
+import qs from "qs";
+
+const API_PATH = "https://tools.dev.myddp.eu/vivadrive.io/contacts.php";
 
 class Landing extends Component {
   constructor(props) {
@@ -35,46 +38,24 @@ class Landing extends Component {
     this.state = {
       email: ""
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
-  async change(event) {
-    await this.setState({
-      [event.target.name]: event.target.value
-    });
-    console.log(this.state);
-  }
-
-  handleSubmit(e) {
+  handleFormSubmit = e => {
     e.preventDefault();
-    // let authToken = localStorage.getItem("Token");
-
-    const data = {
-      email: this.state.email
-    };
-
     axios({
-      // Define Method
       method: "post",
-
-      // Set Access Token URL
-      url: `https://simpleisbestt.herokuapp.com/api/newsletter/`,
-      //Set Headers
+      url: `${API_PATH}`,
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-        // "Content-Type": "application/x-www-form-urlencoded"
-        // Authorization: "Bearer " + JSON.parse(authToken)
+        "Content-Type": "application/x-www-form-urlencoded"
       },
-
-      // Interpolate variables in the strings using Template Literals
-      data
+      data: qs.stringify(this.state)
     })
-      .then(res => {
+      .then(result => {
         this.setState({
           email: ""
         });
-        this.props.history.push("/");
+        this.props.history.push("/pl");
         Swal.fire({
           title: "Thank you for contacting us",
           type: "success",
@@ -92,6 +73,13 @@ class Landing extends Component {
           timer: 2000
         });
       });
+  };
+
+  async change(event) {
+    await this.setState({
+      [event.target.name]: event.target.value
+    });
+    console.log(this.state);
   }
 
   render() {
@@ -113,8 +101,8 @@ class Landing extends Component {
               <form
                 noValidate
                 autoComplete="off"
-                method="POST"
-                action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php?noredirect=1"
+                // method="POST"
+                // action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php?noredirect=1"
                 style={{ marginTop: "40px" }}
               >
                 <div className="row">
@@ -129,12 +117,12 @@ class Landing extends Component {
                     />{" "}
                   </div>
                   <div className="col-sm-4">
-                    <button
+                    <input
+                      type="submit"
+                      onClick={e => this.handleFormSubmit(e)}
+                      value=" Zacznij oszczędzać!"
                       className="btn landing_button pl_button"
-                     
-                    >
-                      Zacznij oszczędzać!
-                    </button>
+                    />
                   </div>
                 </div>
               </form>

@@ -4,8 +4,62 @@ import facebook from "../Image/Facebook.png";
 import twitter from "../Image/Twiter.png";
 import linkedin from "../Image/Ln.png";
 import google from "../Image/Medium.png";
+import axios from "axios";
+import Swal from "sweetalert2";
+import qs from "qs";
+
+const API_PATH = "https://tools.dev.myddp.eu/vivadrive.io/contacts.php";
 
 class Plfooter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: ""
+      // mailSent: false
+    };
+  }
+
+  handleFormSubmit = e => {
+    e.preventDefault();
+    axios({
+      method: "post",
+      url: `${API_PATH}`,
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: qs.stringify(this.state)
+    })
+      .then(result => {
+        this.setState({
+          email: ""
+        });
+        this.props.history.push("/pl");
+        Swal.fire({
+          title: "Thank you for contacting us",
+          type: "success",
+          text: "We will get back to you soon",
+          showConfirmButton: false,
+          timer: 7000
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        Swal.fire({
+          title: "Error",
+          type: "error",
+          text: "Error while Sending Email!",
+          timer: 2000
+        });
+      });
+  };
+
+  async change(event) {
+    await this.setState({
+      [event.target.name]: event.target.value
+    });
+    console.log(this.state);
+  }
+
   render() {
     return (
       <div className="" style={{ marginTop: "40px" }}>
@@ -53,10 +107,7 @@ class Plfooter extends Component {
               </p>
 
               <div style={{ marginTop: "50px" }}>
-                <form
-                  method="POST"
-                  action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php?noredirect=1"
-                >
+                <form noValidate autoComplete="off">
                   <div className="row">
                     <div className="col-sm-6">
                       <input
@@ -64,13 +115,17 @@ class Plfooter extends Component {
                         style={{ border: "1px solid gray", height: "38px" }}
                         type="text"
                         name="email"
+                        onChange={this.change.bind(this)}
                         placeholder=" Twój adres email"
                       />{" "}
                     </div>
                     <div className="col-sm-4">
-                      <button className="btn landing_button pl_button">
-                        Zacznij oszczędzać!
-                      </button>
+                      <input
+                        type="submit"
+                        onClick={e => this.handleFormSubmit(e)}
+                        value=" Zacznij oszczędzać!"
+                        className="btn landing_button pl_button"
+                      />
                     </div>
                   </div>
                 </form>

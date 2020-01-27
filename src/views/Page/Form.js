@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import qs from "qs";
+const API_PATH = "https://tools.dev.myddp.eu/vivadrive.io/contacts.php";
 
 class Form extends Component {
   constructor(props) {
@@ -8,50 +10,27 @@ class Form extends Component {
     this.state = {
       email: ""
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  async change(event) {
-    await this.setState({
-      [event.target.name]: event.target.value
-    });
-    console.log(this.state);
-  }
-
-  handleSubmit(e) {
+  handleFormSubmit = e => {
     e.preventDefault();
-    // let authToken = localStorage.getItem("Token");
-
-    const data = {
-      email: this.state.email
-    };
-
     axios({
-      // Define Method
       method: "post",
-
-      // Set Access Token URL
-      url: `https://simpleisbestt.herokuapp.com/api/newsletter/`,
-      //Set Headers
+      url: `${API_PATH}`,
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-        // "Content-Type": "application/x-www-form-urlencoded"
-        // Authorization: "Bearer " + JSON.parse(authToken)
+        "Content-Type": "application/x-www-form-urlencoded"
       },
-
-      // Interpolate variables in the strings using Template Literals
-      data
+      data: qs.stringify(this.state)
     })
-      .then(res => {
+      .then(result => {
         this.setState({
           email: ""
         });
-        this.props.history.push("/landing");
+        this.props.history.push("/");
         Swal.fire({
-          title: "Thank You For Conatact Us",
+          title: "Thank you for contacting us",
           type: "success",
-          text: "We will be in touch with you soon",
+          text: "We will get back to you soon",
           showConfirmButton: false,
           timer: 7000
         });
@@ -65,6 +44,13 @@ class Form extends Component {
           timer: 2000
         });
       });
+  };
+
+  async change(event) {
+    await this.setState({
+      [event.target.name]: event.target.value
+    });
+    console.log(this.state);
   }
 
   render() {
@@ -72,8 +58,9 @@ class Form extends Component {
       <form
         noValidate
         autoComplete="off"
-        method="POST"
-        action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php?noredirect=1"
+        // method="POST"
+        // onSubmit={this.handleSubmit1.bind(this)}
+        // action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php?noredirect=1"
       >
         <div className="row">
           <div className="col-sm-6">
@@ -87,7 +74,12 @@ class Form extends Component {
             />{" "}
           </div>
           <div className="col-sm-4">
-            <button className="btn landing_button">START SAVING</button>
+            <input
+              type="submit"
+              onClick={e => this.handleFormSubmit(e)}
+              value=" START SAVING"
+              className="btn landing_button"
+            />
           </div>
         </div>
       </form>

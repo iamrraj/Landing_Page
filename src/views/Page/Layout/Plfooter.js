@@ -33,7 +33,7 @@ class Plfooter extends Component {
         this.setState({
           email: ""
         });
-        this.props.history.push("/pl");
+        this.props.history.push("/digitalfleet/pl");
         Swal.fire({
           title: "Thank you for contacting us",
           type: "success",

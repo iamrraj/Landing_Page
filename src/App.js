@@ -14,9 +14,9 @@ class App extends Component {
       <BrowserRouter>
         {/* <Header /> */}
         <Switch>
-          <Route path={baseUrl + "/digitalfleet/"} exact component={Landing} />
+          <Route path={baseUrl + "/"} exact component={Landing} />
           {/* <Route path="/" exact component={Landing} /> */}
-          <Route path={baseUrl + "/digitalfleet/pl/"} component={Polish} />
+          <Route path={baseUrl + "/pl/"} component={Polish} />
         </Switch>
         {/* <Footer /> */}
       </BrowserRouter>

@@ -119,6 +119,14 @@ class Landing extends Component {
     return (
       <div className="land">
         <Header />
+
+        <div
+          class="fb-customerchat"
+          attribution="setup_tool"
+          page_id="290178911359375"
+          theme_color="#44BEC7"
+        ></div>
+
         {/* <Helmet>Landing Page</Helmet> */}
 
         <div className="conatin">

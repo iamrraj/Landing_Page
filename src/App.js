@@ -6,6 +6,7 @@ import Landing from "./views/Page/Landing";
 
 import "./App.css";
 import Polish from "./views/Page/Polish";
+import Pt from "./views/Page/Pt/Pt"
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
           <Route path={baseUrl + "/"} exact component={Landing} />
           {/* <Route path="/" exact component={Landing} /> */}
           <Route path={baseUrl + "/pl/"} component={Polish} />
+          <Route path={baseUrl + "/pt/"} component={Pt} />
         </Switch>
         {/* <Footer /> */}
       </BrowserRouter>

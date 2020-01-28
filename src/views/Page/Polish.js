@@ -91,12 +91,12 @@ class Landing extends Component {
       <div className="land">
         <Plheader />
 
-        <div
+        {/* <div
           class="fb-customerchat"
           attribution="setup_tool"
           page_id="290178911359375"
           theme_color="#44BEC7"
-        ></div>
+        ></div> */}
         {/* <Helmet>Landing Page</Helmet> */}
 
         <div className="conatin">

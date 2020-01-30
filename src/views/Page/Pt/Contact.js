@@ -75,7 +75,7 @@ class Contact extends Component {
                     &times;
         </a>
                 <div>
-                    <p className="conatct_header text-center">PTGet in touch with us</p>
+                    <p className="conatct_header text-center">Fala connosco</p>
                 </div>
                 <div style={{ marginTop: "40px" }}>
                     <form
@@ -87,7 +87,7 @@ class Contact extends Component {
                             <input
                                 type="text"
                                 style={{ border: "1px solid gray" }}
-                                placeholder="Name*"
+                                placeholder="Nome*"
                                 name="name"
                                 onChange={this.change.bind(this)}
                                 required
@@ -99,7 +99,7 @@ class Contact extends Component {
                             <input
                                 type="text"
                                 style={{ border: "1px solid gray" }}
-                                placeholder="Company Name*"
+                                placeholder="Companhia*"
                                 required
                                 name="cname"
                                 onChange={this.change.bind(this)}
@@ -110,7 +110,7 @@ class Contact extends Component {
                         <div className="col-sm-12">
                             <input
                                 type="email"
-                                placeholder="Email address*"
+                                placeholder="Email*"
                                 name="email"
                                 required
                                 onChange={this.change.bind(this)}
@@ -121,7 +121,7 @@ class Contact extends Component {
                             <input
                                 type="text"
                                 style={{ border: "1px solid gray" }}
-                                placeholder="Mobile Number*"
+                                placeholder="Numero de telefone*"
                                 name="phone"
                                 required
                                 onChange={this.change.bind(this)}
@@ -130,7 +130,7 @@ class Contact extends Component {
                         </div>
                         <div className="col-sm-12">
                             <textarea
-                                placeholder="Message (optional)"
+                                placeholder="Mensagem (opcional)"
                                 name="message"
                                 onChange={this.change.bind(this)}
                                 className="form-control inputt"
@@ -142,7 +142,7 @@ class Contact extends Component {
                             <center>
                                 <input
                                     type="submit"
-                                    value="SEND MESSAGE"
+                                    value="ENVIAR MENSAGEM"
                                     disabled={!isEnabled}
                                     className="btn landing_button"
                                 />

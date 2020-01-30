@@ -351,13 +351,11 @@ class Pt extends Component {
                                         </h1>
                                         <p className="carsole_subhead">
                                             {" "}
-                                            "Współpracujemy z Digital Fleet, wykorzystując technologie
-                                            Big Data i sztucznej inteligencji, w celu stworzenia
-                      inteligentnych produktów dla sektora elektromobilności."{" "}
+                                            "Estamos trabalhando em conjunto com a DigitalFleet para aplicar AI e Big Data e criar produtos para electromobilidade."{" "}
                                         </p>
                                         <div className="footer1" style={{ marginLeft: "20px" }}>
                                             <p className="name_carsole">Arkadiusz Seredyn</p>
-                                            <p className="title_carsole">Wiceprezes Synerise</p>
+                                            <p className="title_carsole">Vice Presidente da Synerise</p>
                                         </div>
                                     </div>
                                 </div>
@@ -383,16 +381,14 @@ class Pt extends Component {
                                             />{" "}
                                         </div>
                                         <h1 className="carsole_head" style={{ marginTop: "50px" }}>
-                                            Efektywny{" "}
+                                            É eficiente {" "}
                                         </h1>
                                         <p className="carsole_subhead">
-                                            "Wykorzystaliśmy system VivaDrive, aby stworzyć program
-                                            dla młodych kierowców promujący efektywną jazdę i
-                      zapobiegający wypadkom drogowym."{" "}
+                                            "Usamos o Digital Fleet da VivaDrive para criar um programa divertido para novos condutores. Faz um bom trabalho promovendo uma condução eficaz e evita acidentes de trânsito."{" "}
                                         </p>
                                         <div className="footer1" style={{ marginLeft: "20px" }}>
                                             <p className="name_carsole">Karin Genoe</p>
-                                            <p className="title_carsole">CEO VIAS</p>
+                                            <p className="title_carsole">CEO da VIAS</p>
                                         </div>
                                     </div>
                                 </div>
@@ -418,17 +414,15 @@ class Pt extends Component {
                                             />{" "}
                                         </div>
                                         <h1 className="carsole_head" style={{ marginTop: "50px" }}>
-                                            Angażujący{" "}
+                                            É envolvente{" "}
                                         </h1>
                                         <p className="carsole_subhead">
-                                            "Wykorzystaliśmy system VivaDrive, aby stworzyć kulturę
-                                            bezpiecznej jazdy w naszej organizacji i aby poprawić
-                                            kluczowe wskaźniki kosztowe naszej floty."
+                                            "Usamos o Digital Fleet da VivaDrive para incentivar os nossos funcionários a criarem uma cultura de segurança na nossa companhia e melhorar indicadores de performance internos da tua frota."
                     </p>
                                         <div className="footer1" style={{ marginLeft: "20px" }}>
                                             <p className="name_carsole">Ben Weyts</p>
                                             <p className="title_carsole">
-                                                Minister mobilności, Belgia
+                                                Ministro da Mobilidade da Bélgica
                       </p>
                                         </div>
                                     </div>
@@ -455,17 +449,14 @@ class Pt extends Component {
                                             />{" "}
                                         </div>
                                         <h1 className="carsole_head" style={{ marginTop: "50px" }}>
-                                            Zrównoważony
+                                            It's sustainable
                     </h1>
                                         <p className="carsole_subhead">
-                                            "VivaDrive jest partnerem technologicznym wyprawy
-                                            Power4Change 2020 - pierwszej w historii podróży dookoła
-                                            świata z robotem humanoidalnym NOA, realizowanej
-                      samochodem elektrycznym."{" "}
+                                            "O VivaDrive é um parceiro tecnológico da Expedição Power4Change 2020 - a primeira viagem ao mundo com o robô humanóide NOA, realizado num veículo elétrico."{" "}
                                         </p>
                                         <div className="footer1" style={{ marginLeft: "20px" }}>
                                             <p className="name_carsole">Marek Kamiński</p>
-                                            <p className="title_carsole">Słynny polski podróżnik</p>
+                                            <p className="title_carsole">Grande Explorador Polaco</p>
                                         </div>
                                     </div>
                                 </div>

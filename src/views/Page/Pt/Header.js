@@ -4,25 +4,25 @@ import "../Layout/index.css";
 import Contact from "./Contact";
 
 class Header extends Component {
-    render() {
-        return (
-            <div className="roww">
-                <Contact />
-                <nav className="navbar navbar-expand-lg navbar-dark bg-white fixed">
-                    <a
-                        className="navbar-brand"
-                        href={`${process.env.PUBLIC_URL}/`}
-                        style={{ color: "#212226" }}
-                    >
-                        <img
-                            src={head}
-                            alt="MainImag"
-                            style={{ height: "45px", marginLeft: "10px" }}
-                        ></img>{" "}
-                        &nbsp;
+  render() {
+    return (
+      <div className="roww">
+        <Contact />
+        <nav className="navbar navbar-expand-lg navbar-dark bg-white fixed">
+          <a
+            className="navbar-brand"
+            href={`${process.env.PUBLIC_URL}/`}
+            style={{ color: "#212226" }}
+          >
+            <img
+              src={head}
+              alt="MainImag"
+              style={{ height: "45px", marginLeft: "10px" }}
+            ></img>{" "}
+            &nbsp;
           </a>
 
-                    {/* <button
+          {/* <button
             className="navbar-toggler font-weight-bold text-white"
             style={{ background: "#b71c1c", padding: "8px" }}
             type="button"
@@ -39,10 +39,10 @@ class Header extends Component {
             </span>{" "}
             <span className="navbar-toggler-icon "></span>
           </button> */}
-                    {/* <div className="collapse navbar-collapse" id="navbarSupportedContent"> */}
-                    <ul className="navbar-nav mx-auto"></ul>
-                    <ul className="navbar-nav navv ">
-                        {/* <li className="nav-item nav-item1 btnn ">
+          {/* <div className="collapse navbar-collapse" id="navbarSupportedContent"> */}
+          <ul className="navbar-nav mx-auto"></ul>
+          <ul className="navbar-nav navv ">
+            {/* <li className="nav-item nav-item1 btnn ">
                 <a
                   className="nav-link  text-dark font-weight-bold "
                   href="/pricing"
@@ -51,22 +51,22 @@ class Header extends Component {
                 </a>
               </li> */}
 
-                        <li className="nav-item nav-item1 btnn ">
-                            <a
-                                className="nav-link btn contact_btn font-weight-bold"
-                                href="#contactt"
-                                rel="modal:open"
-                                style={{ color: "rgb(183, 28, 28, 0.8)", marginRight: "0px" }}
-                            >
-                                PT GEt In Touch
+            <li className="nav-item nav-item1 btnn ">
+              <a
+                className="nav-link btn contact_btn font-weight-bold"
+                href="#contactt"
+                rel="modal:open"
+                style={{ color: "rgb(183, 28, 28, 0.8)", marginRight: "0px" }}
+              >
+                Fala connosco
               </a>
-                        </li>
-                    </ul>
-                    {/* </div> */}
-                </nav>
-            </div>
-        );
-    }
+            </li>
+          </ul>
+          {/* </div> */}
+        </nav>
+      </div>
+    );
+  }
 }
 
 export default Header;

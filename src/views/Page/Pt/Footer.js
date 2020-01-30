@@ -79,13 +79,13 @@ class Footer extends Component {
                                     marginTop: "80px"
                                 }}
                             >
-                                Gotowy?
+                                Pronto para começar?
               </p>
                             <h1
                                 className="landing_heading"
                                 style={{ marginTop: "-12px", fontSize: "40px" }}
                             >
-                                Zacznij oszczędzać
+                                Transforma já a tua frota
               </h1>
                             <p
                                 className="footer-don1 "
@@ -106,8 +106,7 @@ class Footer extends Component {
                 >
                   digitalfleet@vivadrive.io
                 </strong> */}
-                                Zapewniamy zmniejszenie kosztów paliwa i serwisu, optymalizację
-                                kosztu TCO i pełne zaangażowanie kierowców.
+                                Temos a certeza que vais reduzir a despesa do combustível, manutenção, optimizar o teu TCO e motivar os teus motoristas.
               </p>
 
                             <div style={{ marginTop: "50px" }}>
@@ -126,7 +125,7 @@ class Footer extends Component {
                                                 value={this.state.email}
                                                 autoComplete="off"
                                                 onChange={this.change.bind(this)}
-                                                placeholder=" Twój adres email"
+                                                placeholder="O teu email"
                                             />{" "}
                                         </div>
                                         <div className="col-sm-4">
@@ -134,7 +133,7 @@ class Footer extends Component {
                                                 type="submit"
                                                 // onClick={e => this.handleFormSubmit(e)}
                                                 disabled={!isEnabled}
-                                                value=" Zacznij oszczędzać!"
+                                                value="Começa a poupar!"
                                                 className="btn landing_button pl_button"
                                             />
                                         </div>

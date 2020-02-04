@@ -57,9 +57,9 @@ class Pt extends Component {
                 });
                 // this.props.history.push("/digitalfleet/pl");
                 Swal.fire({
-                    title: "Dziękujemy za kontakt,",
-                    type: "success",
-                    text: "skontaktujemy się z Tobą wkrótce.",
+                    title: "Obrigado por nos contactar,",
+                    icon: "success",
+                    text: "entraremos em contato em breve.",
                     showConfirmButton: false,
                     timer: 2000
                 });
@@ -67,9 +67,9 @@ class Pt extends Component {
             .catch(err => {
                 console.log(err);
                 Swal.fire({
-                    title: "Dziękujemy za kontakt,",
-                    type: "success",
-                    text: "skontaktujemy się z Tobą wkrótce.",
+                    title: "Obrigado por nos contactar,",
+                    icon: "success",
+                    text: "entraremos em contato em breve.",
                     showConfirmButton: false,
                     timer: 2000
                 });
@@ -449,7 +449,7 @@ class Pt extends Component {
                                             />{" "}
                                         </div>
                                         <h1 className="carsole_head" style={{ marginTop: "50px" }}>
-                                            It's sustainable
+                                            É sustentável
                     </h1>
                                         <p className="carsole_subhead">
                                             "O VivaDrive é um parceiro tecnológico da Expedição Power4Change 2020 - a primeira viagem ao mundo com o robô humanóide NOA, realizado num veículo elétrico."{" "}

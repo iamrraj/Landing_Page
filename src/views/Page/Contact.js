@@ -39,7 +39,7 @@ class Contact extends Component {
         //this.props.history.push("/digitalfleet/");
         Swal.fire({
           title: "Thank you for contacting us",
-          type: "success",
+          icon: "success",
           text: "We will get back to you soon",
           showConfirmButton: false,
           timer: 2000
@@ -50,7 +50,7 @@ class Contact extends Component {
         console.log(err);
         Swal.fire({
           title: "Thank you for contacting us",
-          type: "success",
+          icon: "success",
           text: "We will get back to you soon",
           showConfirmButton: false,
           timer: 2000

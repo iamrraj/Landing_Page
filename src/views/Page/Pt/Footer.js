@@ -35,9 +35,9 @@ class Footer extends Component {
                 });
                 // this.props.history.push("/digitalfleet/pl");
                 Swal.fire({
-                    title: "Dziękujemy za kontakt,",
-                    type: "success",
-                    text: "skontaktujemy się z Tobą wkrótce.",
+                    title: "Obrigado por nos contactar,",
+                    icon: "success",
+                    text: "entraremos em contato em breve.",
                     showConfirmButton: false,
                     timer: 2000
                 });
@@ -45,9 +45,9 @@ class Footer extends Component {
             .catch(err => {
                 console.log(err);
                 Swal.fire({
-                    title: "Dziękujemy za kontakt,",
-                    type: "success",
-                    text: "skontaktujemy się z Tobą wkrótce.",
+                    title: "Obrigado por nos contactar,",
+                    icon: "success",
+                    text: "entraremos em contato em breve.",
                     showConfirmButton: false,
                     timer: 2000
                 });

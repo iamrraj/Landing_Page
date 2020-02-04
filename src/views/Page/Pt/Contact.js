@@ -38,9 +38,9 @@ class Contact extends Component {
                 });
                 //this.props.history.push("/digitalfleet/");
                 Swal.fire({
-                    title: "Thank you for contacting us",
-                    type: "success",
-                    text: "We will get back to you soon",
+                    title: "Obrigado por nos contactar",
+                    icon: "success",
+                    text: "Entraremos em contacto em breve!",
                     showConfirmButton: false,
                     timer: 2000
                 });
@@ -49,9 +49,9 @@ class Contact extends Component {
             .catch(err => {
                 console.log(err);
                 Swal.fire({
-                    title: "Thank you for contacting us",
-                    type: "success",
-                    text: "We will get back to you soon",
+                    title: "Obrigado por nos contactar",
+                    icon: "success",
+                    text: "Entraremos em contacto em breve.",
                     showConfirmButton: false,
                     timer: 2000
                 });

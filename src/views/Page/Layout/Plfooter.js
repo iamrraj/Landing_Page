@@ -36,7 +36,7 @@ class Plfooter extends Component {
         // this.props.history.push("/digitalfleet/pl");
         Swal.fire({
           title: "Dziękujemy za kontakt,",
-          type: "success",
+          icon: "success",
           text: "skontaktujemy się z Tobą wkrótce.",
           showConfirmButton: false,
           timer: 2000
@@ -46,7 +46,7 @@ class Plfooter extends Component {
         console.log(err);
         Swal.fire({
           title: "Dziękujemy za kontakt,",
-          type: "success",
+          icon: "success",
           text: "skontaktujemy się z Tobą wkrótce.",
           showConfirmButton: false,
           timer: 2000

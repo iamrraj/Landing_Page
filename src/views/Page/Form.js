@@ -29,7 +29,7 @@ class Form extends Component {
         // this.props.history.push("/digitalfleet/");
         Swal.fire({
           title: "Thank you for contacting us",
-          type: "success",
+          icon: "success",
           text: "We will get back to you soon",
           showConfirmButton: false,
           timer: 2000
@@ -39,7 +39,7 @@ class Form extends Component {
         console.log(err);
         Swal.fire({
           title: "Error",
-          type: "error",
+          icon: "error",
           text: "Error while Sending Email!",
           timer: 2000
         });
@@ -62,9 +62,9 @@ class Form extends Component {
         noValidate
         autoComplete="off"
         onSubmit={e => this.handleFormSubmit(e)}
-        // method="POST"
-        // onSubmit={this.handleSubmit1.bind(this)}
-        // action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php?noredirect=1"
+      // method="POST"
+      // onSubmit={this.handleSubmit1.bind(this)}
+      // action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php?noredirect=1"
       >
         <div className="row">
           <div className="col-sm-6">

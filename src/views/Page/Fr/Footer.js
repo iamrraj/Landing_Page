@@ -4,17 +4,16 @@ import facebook from "../Image/Facebook.png";
 import twitter from "../Image/Twiter.png";
 import linkedin from "../Image/Ln.png";
 import google from "../Image/Medium.png";
-import Form from "../Form";
 
 class Footer extends Component {
   render() {
+    const mailformat = RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g);
+    const isEnabled = this.props.state.match(mailformat);
     return (
       <div className="" style={{ marginTop: "40px" }}>
-        {/* <Contact /> */}
         <div className="">
           <div className="col-sm-12 backbone" style={{ width: "100%" }}>
             <div className="col-sm-7 col-md-12 col-xl-10 backdody ">
-              {/* <p className="font-weight-bold">.</p> */}
               <p
                 className=" footer-don"
                 style={{
@@ -22,39 +21,53 @@ class Footer extends Component {
                   marginTop: "80px"
                 }}
               >
-                Ready to get started?
+                Prêt à commencer ?
               </p>
               <h1
                 className="landing_heading"
                 style={{ marginTop: "-12px", fontSize: "40px" }}
               >
-                Supercharge your fleet now!
+                Boostez votre parc automobile maintenant !
               </h1>
               <p
-                className="  footer-don1"
+                className="footer-don1 "
                 style={{ marginTop: "20px", fontSize: "15px" }}
               >
-                {/* {" "}
-                Questions? Call us at{" "}
-                <strong
-                  style={{ color: "rgb(183, 28, 28)", opacity: "1" }}
-                  className="font-weight-bolder"
-                >
-                  1-800-975-5304
-                </strong>{" "}
-                or email us{" "}
-                <strong
-                  style={{ color: "rgb(183, 28, 28)", opacity: "1" }}
-                  className="font-weight-bolder"
-                >
-                  digitalfleet@vivadrive.io
-                </strong> */}
-                We make sure you reduce fuel and maintenance costs, optimise
-                your fleet TCO and engage your drivers.
+                Nous veillons à ce que vous réduisiez vos coûts de carburant et
+                d'entretien, à ce que vous optimisiez le coût total de
+                possession de votre flotte et à ce que vos conducteurs
+                s'engagent.
               </p>
 
               <div style={{ marginTop: "50px" }}>
-                <Form />
+                <form
+                  noValidate
+                  autoComplete="off"
+                  onSubmit={this.props.submit}
+                >
+                  <div className="row">
+                    <div className="col-sm-6">
+                      <input
+                        className="form-control"
+                        style={{ border: "1px solid gray", height: "38px" }}
+                        type="text"
+                        name="email"
+                        value={this.props.state}
+                        autoComplete="off"
+                        onChange={this.props.change}
+                        placeholder="Votre adresse e-mail"
+                      />{" "}
+                    </div>
+                    <div className="col-sm-4">
+                      <input
+                        type="submit"
+                        disabled={!isEnabled}
+                        value="COMMENCER À ÉCONOMISER"
+                        className="btn landing_button pl_button"
+                      />
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>

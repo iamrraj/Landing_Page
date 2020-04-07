@@ -394,6 +394,9 @@ max-width : 320px;
 .pl_button {
   width: 200px;
 }
+.fr_button {
+  width: 230px;
+}
 
 .pricing_list {
   margin-top: 8px;

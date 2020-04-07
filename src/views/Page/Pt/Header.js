@@ -11,7 +11,7 @@ class Header extends Component {
         <nav className="navbar navbar-expand-lg navbar-dark bg-white fixed">
           <a
             className="navbar-brand"
-            href={`${process.env.PUBLIC_URL}/`}
+            href={`${process.env.PUBLIC_URL}/pt/`}
             style={{ color: "#212226" }}
           >
             <img

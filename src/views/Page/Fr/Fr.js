@@ -127,9 +127,10 @@ class Fr extends Component {
                     <input
                       type="submit"
                       // onClick={e => this.handleFormSubmit(e)}
+                     
                       value="COMMENCER À ÉCONOMISER"
                       disabled={!isEnabled}
-                      className="btn landing_button pl_button"
+                      className="btn landing_button pl_button fr_button"
                     />
                   </div>
                 </div>
@@ -165,8 +166,8 @@ class Fr extends Component {
                 Réduisez les coûts de carburant et d'entretien
               </p>
               <p className="landing_subtitle">
-                Comprenez quand, où et comment vos voitures sont utilisées vous
-                aide à identifier où et comment faire des économies.
+                Comprendre où, quand et comment vos voitures sont utilisées vous
+                aide à identifier précisément comment faire des économies.
               </p>
             </div>
             <div className="col-sm-3 col-md-4 col-xl-3 text-left box_shaoe">

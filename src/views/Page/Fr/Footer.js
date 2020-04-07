@@ -63,7 +63,7 @@ class Footer extends Component {
                         type="submit"
                         disabled={!isEnabled}
                         value="COMMENCER À ÉCONOMISER"
-                        className="btn landing_button pl_button"
+                        className="btn landing_button pl_button fr_button"
                       />
                     </div>
                   </div>

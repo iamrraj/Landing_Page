@@ -75,9 +75,7 @@ class Contact extends Component {
           &times;
         </a>
         <div>
-          <p className="conatct_header text-center">
-            Rester en contact avec nous
-          </p>
+          <p className="conatct_header text-center">Contactez nous</p>
         </div>
         <div style={{ marginTop: "40px" }}>
           <form

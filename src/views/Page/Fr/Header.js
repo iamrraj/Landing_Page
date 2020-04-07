@@ -11,7 +11,7 @@ class Header extends Component {
         <nav className="navbar navbar-expand-lg navbar-dark bg-white fixed">
           <a
             className="navbar-brand"
-            href={`${process.env.PUBLIC_URL}/`}
+            href={`${process.env.PUBLIC_URL}/fr/`}
             style={{ color: "#212226" }}
           >
             <img
@@ -31,7 +31,7 @@ class Header extends Component {
                 rel="modal:open"
                 style={{ color: "rgb(183, 28, 28, 0.8)", marginRight: "0px" }}
               >
-                Rester en contact
+                Nous contacter
               </a>
             </li>
           </ul>

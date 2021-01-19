@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Helmet } from "react-helmet";
-import Header from "./Layout/Header";
+import Header from "../Layout/Header";
 import tick from "./Image/tick.png";
-import Footer from "./Layout/Footer";
+import Footer from "../Layout/Footer";
 
 class Pricing extends Component {
   render() {

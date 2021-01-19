@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { AlertMessage } from "../Contact/Message/Message";
-import message from "../Contact/Message/Text";
+import { SendData } from "../Service/Request";
 import text from "../Contact/Message/Translation";
-import axios from "axios";
-
-const API = `https://digitalfleet.eu/api/1/tos/contact/`;
-function Form(props) {
+function Form() {
   const [contact, setContact] = useState({
     email_id: "",
   });
@@ -16,29 +13,7 @@ function Form(props) {
     const isEnabled = contact.email_id.match(mailformat);
 
     if (isEnabled) {
-      axios({
-        method: "POST",
-        url: API,
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        data: contact,
-      })
-        .then((result) => {
-          if (result.status === 201) {
-            message();
-          } else {
-            AlertMessage(
-              "Error",
-              "There is some error while sending information",
-              "error"
-            );
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      SendData(contact);
     } else {
       AlertMessage("Warning !!", "Email is Required !", "warning");
     }

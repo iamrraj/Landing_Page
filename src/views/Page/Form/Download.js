@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { AlertMessage } from "../Contact/Message/Message";
-import message from "../Contact/Message/Text";
+import { SendData } from "../Service/Request";
 import text from "../Contact/Message/Translation";
-import axios from "axios";
 
-const API = `https://digitalfleet.eu/api/1/tos/contact/`;
 function Download(props) {
   const [contact, setContact] = useState({
     email_id: "",
@@ -17,31 +15,8 @@ function Download(props) {
     const isEnabled = contact.email_id.match(mailformat);
 
     if (isEnabled) {
-      axios({
-        method: "POST",
-        url: API,
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        data: contact,
-      })
-        .then((result) => {
-          if (result.status === 201) {
-            message();
-
-            window.open(props.link);
-          } else {
-            AlertMessage(
-              "Error",
-              "There is some error while sending information",
-              "error"
-            );
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      SendData(contact);
+      window.open(props.link);
     } else {
       AlertMessage("Warning !!", "Email is Required !", "warning");
     }
@@ -56,8 +31,6 @@ function Download(props) {
       noValidate
       autoComplete="off"
       onSubmit={handleFormSubmit}
-      // method="POST"
-      // action="https://tools.dev.myddp.eu/vivadrive.io/contacts.php"
       style={{ marginTop: "30px" }}
     >
       <div className="row">

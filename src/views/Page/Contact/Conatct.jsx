@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { AlertMessage } from "./Message/Message";
-import axios from "axios";
-import message from "./Message/Text";
-
-const API = `https://digitalfleet.eu/api/1/tos/contact/`;
+import text from "./Message/Translation";
+import { SendData } from "../Service/Request";
 
 function Conatct() {
   const [contact, setContact] = useState({
@@ -14,8 +12,6 @@ function Conatct() {
     message: "",
   });
 
-  const baseUrl = process.env.PUBLIC_URL;
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
@@ -23,30 +19,7 @@ function Conatct() {
     const isEnabled = contact.email_id.match(mailformat);
 
     if (isEnabled) {
-      axios({
-        method: "POST",
-        url: API,
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        data: contact,
-      })
-        .then((result) => {
-          if (result.status === 201) {
-            message();
-            window.location.reload(1);
-          } else {
-            AlertMessage(
-              "Error",
-              "There is some error while sending information",
-              "error"
-            );
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      SendData(contact);
     } else {
       AlertMessage("Warning !!", "Email is Required !", "warning");
     }
@@ -57,22 +30,21 @@ function Conatct() {
     setContact({ ...contact, [name]: value });
   };
 
-  const text = (polish, port, french, english) =>
-    window.location.pathname === baseUrl + "/pl/"
-      ? polish
-      : window.location.pathname === baseUrl + "/pt/"
-      ? port
-      : window.location.pathname === baseUrl + "/fr/"
-      ? french
-      : english;
-
   return (
     <div id="contactt" class="modal">
       <a href="# " rel="modal:close" className="float-right text-white h4">
         &times;
       </a>
       <div>
-        <p className="conatct_header text-center">Get in touch with us</p>
+        <p className="conatct_header text-center">
+          {" "}
+          {text(
+            "Skontaktuj się z nami!",
+            "Fala connosco",
+            "Contactez nous",
+            "Get in touch with us"
+          )}
+        </p>
       </div>
       <div style={{ marginTop: "40px" }}>
         <form noValidate autoComplete="off" onSubmit={handleFormSubmit}>
@@ -123,6 +95,11 @@ function Conatct() {
           <div className="col-sm-12">
             <input
               type="text"
+              onKeyPress={(event) => {
+                if (!/[0-9]/.test(event.key)) {
+                  event.preventDefault();
+                }
+              }}
               style={{ border: "1px solid gray" }}
               placeholder={text(
                 "Numer komórkowy (opcjonalne)",

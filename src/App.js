@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Landing from "./views/Page/English/Landing";
 import "./App.css";
+import "./views/Page/Style/Model.css";
 import Polish from "./views/Page/Polish/Polish";
 import Pt from "./views/Page/Port/Pt";
 import Fr from "./views/Page/France/Fr";

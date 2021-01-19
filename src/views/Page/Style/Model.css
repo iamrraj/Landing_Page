@@ -1,0 +1,10 @@
+.modal {
+  position: absolute;
+  top: 7%;
+
+  left: 30%;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+}

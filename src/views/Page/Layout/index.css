@@ -797,3 +797,19 @@ max-width : 320px;
     top: -12px;
   }
 }
+
+.rcd {
+  flex: 1;
+  /* flex-direction: row; */
+  display: flex;
+  justify-content: space-between;
+}
+.rcd,
+.first_section {
+  width: 50%;
+}
+/* .rcd,
+.second_section {
+  width: 50%;
+  align-items: flex-end;
+}  */

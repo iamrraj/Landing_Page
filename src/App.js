@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Landing from "./views/Page/English/Landing";
+import Landing from "./views/Page/Language/English/Landing";
 import "./App.css";
 import "./views/Page/Style/Model.css";
-import Polish from "./views/Page/Polish/Polish";
-import Pt from "./views/Page/Port/Pt";
-import Fr from "./views/Page/France/Fr";
+import Polish from "./views/Page/Language/Polish/Polish";
+import Pt from "./views/Page/Language/Port/Pt";
+import Fr from "./views/Page/Language/France/Fr";
 import Header from "./views/Page/Layout/Header";
 import Footer from "./views/Page/Layout/footer";
 
